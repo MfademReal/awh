@@ -206,6 +206,6 @@ def testupload(t_id,filename):
 
   async def main():
     async with Client("bot2", api_id=Config.APP_ID, api_hash=Config.API_HASH, bot_token=Config.BOT_TOKEN) as app:
-        await app.send_document(t_id, filename, progress=progress)
+        await app.send_document(t_id, filename, progress=progress, reply_to_message_id=message_id)
 
   asyncio.run(main())
