@@ -22,7 +22,6 @@ from threading import Thread
 import logging
 import asyncio
 import nest_asyncio
-from telegram.ext import Updater, MessageHandler, Filters
 
 
 
