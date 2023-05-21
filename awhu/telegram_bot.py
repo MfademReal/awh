@@ -197,7 +197,7 @@ def send_msg(chat_id,msg):
     asyncio.set_event_loop(asyncio.new_event_loop())
     bot = TelegramClient('bot', Config.APP_ID, Config.API_HASH).start(bot_token=Config.BOT_TOKEN)
     if(msg!=""):
-        bot.send_message(chat_id,msg)
+        bot.send_message(chat_id,msg,reply_to_message_id=message_id)
 
 
 def testupload(t_id,filename):
