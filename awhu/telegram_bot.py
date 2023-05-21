@@ -202,7 +202,7 @@ def upload_files(chat_id,files):
     l=len(files)
     for i,file in enumerate(files):
       print(f"\nUploading {file}: ({i} out of {l})")
-      bot.send_file(chat_id, file, force_document=True,progress_callback=progress)
+      bot.send_file(chat_id, file, force_document=True,progress_callback=progress, reply_to_message_id=message_id)
 
 
 def send_msg(chat_id,msg):
@@ -214,7 +214,7 @@ def send_msg(chat_id,msg):
         bot.send_message(chat_id,msg,reply_to_message_id=message_id)
 
 
-def testupload(t_id,filename):
+def testupload(t_id,filename,reply_to_message_id=message_id):
   async def progress(current, total):
     print(f"{current * 100 / total:.1f}%")
 
