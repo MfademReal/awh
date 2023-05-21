@@ -23,11 +23,25 @@ import logging
 import asyncio
 import nest_asyncio
 
+
+
+
+
 def trim_id(chat_id):
     chat_id = chat_id.strip().strip("@")
     if(chat_id[:4] != "-100" and chat_id[1:].isdigit()):
         chat_id = int(f"-100{chat_id}")
     return chat_id
+
+
+
+
+def handle_message(update, context):
+    message_id = update.message.message_id
+    print("Received message ID:", message_id)
+
+
+
 
 def dump(obj,file):
   with open(f'{file}.pickle', 'wb') as handle:
